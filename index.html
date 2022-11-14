@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <title> Anbu Raghavan &amp; Entrepreneur | Full Stack Web App Developer | Ui Designer | Portfolio</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name=description content="Full Stack Developer for hire, specialising in development of custom websites and web applications in JavaScript, React.js, Next.js, Node.js, &amp; more.">
@@ -495,7 +496,7 @@ content="Full Stack Developer for hire, specialising in development of custom we
       </div>
       <!-- end col-6 -->
       <div class="col-lg-6 wow fadeIn" data-wow-delay="0.05s">
-      	 <form class="row inner" id="contact" name="contact" action="./contact.php" method="post">
+      	 <form class="row inner" id="contact"  name="contact" method="POST" data-netlify="true">
         <div class="form-group col-sm-6 col-12">
           <label><span>Your name</span></label>
           <input type="text" name="name" id="name" required>
@@ -528,8 +529,33 @@ content="Full Stack Developer for hire, specialising in development of custom we
         <div class="form-group col-12">
           <button id="submit" type="submit" name="submit">SUBMIT</button>
         </div>
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="form-name" value="name_of_my_form" />
+
         <!-- end form-group -->
       </form>
+
+      <script>
+        const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+  
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};
+
+document
+  .querySelector("form")
+  .addEventListener("submit", handleSubmit);
+
+      </script>
       <!-- end form --> 
        <div id="success" class="alert alert-success" role="alert"> Your message was sent successfully! We will be in touch as soon as we can. </div>
         <!-- end success -->
@@ -589,21 +615,21 @@ content="Full Stack Developer for hire, specialising in development of custom we
     <div class="container">
       <div class="row"> <div class="col-md-4">
           <address>
-          Nivki Kristiatik Street No : 81<br>
-          Kiev – Ukraine
+          No: 183/2 Dhermer Street<br>
+          Nagapattinam – Tamil Nadu
           </address>
         </div>
         <!-- end col-4 -->
         <div class="col-md-4">
           <address>
-          +380 98 294 80 86<br>
-          +90 598 558 24 80
+          +91 99425 02245<br>
+          +91 93442 23822
           </address>
         </div>
         <!-- end col-4 -->
         <div class="col-md-3">
           <address>
-          <a href="#">sayhello@brabus.ua</a>
+          <a href="#">sayhello@anburaghavan.netlify.app</a>
           </address>
         </div>
         <!-- end col-2 --> 
@@ -621,7 +647,7 @@ content="Full Stack Developer for hire, specialising in development of custom we
           <ul>
             <li><a href="#">Behance</a></li>
             <li><a href="#">Instagram</a></li>
-            <li><a href="#">Vimeo</a></li>
+            <li><a href="#">Whatsapp</a></li>
             <li><a href="#">Facebook</a></li>
           </ul>
         </div>
