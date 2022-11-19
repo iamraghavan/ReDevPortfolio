@@ -500,7 +500,7 @@ content="Full Stack Developer for hire, specialising in development of custom we
       </div>
       <!-- end col-6 -->
       <div class="col-lg-6 wow fadeIn" data-wow-delay="0.05s">
-      	 <form class="row inner" id="contact"  name="contact" method="POST" data-netlify="true">
+      	 <form class="row inner" id="contact"  name="contact" method="POST">
         <div class="form-group col-sm-6 col-12">
           <label><span>Your name</span></label>
           <input type="text" name="name" id="name" required>
@@ -538,28 +538,6 @@ content="Full Stack Developer for hire, specialising in development of custom we
 
         <!-- end form-group -->
       </form>
-
-      <script>
-        const handleSubmit = (event) => {
-  event.preventDefault();
-
-  const myForm = event.target;
-  const formData = new FormData(myForm);
-  
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
-};
-
-document
-  .querySelector("form")
-  .addEventListener("submit", handleSubmit);
-
-      </script>
       <!-- end form --> 
        <div id="success" class="alert alert-success" role="alert"> Your message was sent successfully! We will be in touch as soon as we can. </div>
         <!-- end success -->
